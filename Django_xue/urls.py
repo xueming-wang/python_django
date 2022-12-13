@@ -38,4 +38,29 @@ urlpatterns = [
     #/int/add/int  
     path('<int:n>/<str:op>/<int:m>', views.cal_view),
 
+    #/test_request/1/add/2/
+    # path('test_request/<int:n>/<str:op>/<int:m>', views.test_request),
+
+    #/test_get_post
+    path('test_get_post', views.test_get_post),
+
+    path('test_html', views.test_html),
+
+    path('test_html_param', views.test_html_param)
 ]
+
+
+
+
+#200 OK
+#301 Moved Permanently
+#302 Found
+#404 Not Found
+#500 Internal Server Error
+
+#content-type
+#text/html(默认, html)
+#text/plain(纯文本)
+#test/javascript(js)
+#application/json(json)
+#application/xml(xml)
