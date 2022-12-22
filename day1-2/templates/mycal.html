@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<!-- #action 提交到哪里去 -->
+<form action='/mycal' method='post'>
+	<input type='test' name='x' value="{{ x }}">
+	<select name='op'>
+		<option value="add"{% if op == 'add' %}selected{% endif %}>+</option>
+		<option value="sub"{% if op == 'sub' %}selected{% endif %}>-</option>
+		<option value="mul"{% if op == 'mul' %}selected{% endif %}>*</option>
+		<option value="div"{% if op == 'div' %}selected{% endif %}>/</option>
+	</select>
+	<input type="test" name="y" value="{{ y }}"> = <span>{{ result }}</span>
+	<div>
+		<input type="submit" value="计算">
+	</div>
+</form>
+
+</body>
+
+</html>
+
+
+

@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<!-- 运算符  in, not in, is , is not, not, and, or-->
+{% if x > 10 %}
+天气很好
+{% else %}
+天气不好
+{% endif %}
+
+{% for name in lst %}
+	{% if forloop.first %} &&&& {% endif %}
+	<p>{{ forloop.counter }}{{ name }}</p> 
+	{% if forloop.last %} ====== {% endif %}
+{% empty %}
+	<p>列表为空</p>
+{% endfor %}
+</body>
+
+</html>
+
+<!-- &&&&
+1a
+
+2b
+
+3c
+====== -->
+<!-- forloop.counter 从1开始 -->
+<!-- forloop.counter0 从0开始 -->
+<!-- forloop.revcounter 从最后第1开始 -->
+<!-- forloop.revcounter0 从最后0开始 -->
+<!-- forloop.first  循环开始-->
+<!-- forloop.last   循环结束-->
+<!-- forloop.parentloop -->
+<!-- forloop.length -->
+<!-- forloop.depth -->

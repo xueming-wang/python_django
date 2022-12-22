@@ -1,5 +1,12 @@
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render #模板层
+
+
+# view 是视图函数
+# request 是请求对象
+# HttpResponse 是响应对象
+# 接收请求, 获取数据, 返回响应 , 丢给模板层
+
 
 POST_FROM = '''
 <form action="/test_get_post" method="post">
@@ -7,6 +14,7 @@ POST_FROM = '''
     <input type="submit" value="提交">
 </form>
 '''
+
 
 # 视图函数
 def index_view(request): 
@@ -68,16 +76,9 @@ def test_get_post(request):
         return HttpResponse('ok')
 
 
-#test html  方案一
-# def test_html(request):
-
-#     from django.template import loader
-#     t = loader.get_template('test_html.html')
-#     html = t.render()
-#     return HttpResponse(html)
-
 #test html 方案二
 def test_html(request):
+    #数据从数据库拿出来
     dic = {'name':'zhangsan', 'age':18}
    
     return render(request, 'test_html.html', dic)
@@ -102,4 +103,39 @@ def say_hi():
 class Dog(object):
     def say(self):
         return 'wangwangwang'
+
+def test_if_for(request):
+    dic = {}
+    dic['x'] = 10
+
+    dic['lst'] = ['a', 'b', 'c']
+    
+    return render(request, 'test_if_for.html', dic)
+
+
+
+def test_mycal(request):
+    if request.method == 'GET':
+        return render(request, 'mycal.html')
+
+    elif request.method == 'POST':
+        #获取网页数据
+        x = request.POST['x']
+        y = request.POST['y']
+        op = request.POST['op']
+
+        result = 0
+        if op == 'add':
+            result = int(x) + int(y)
+        elif op == 'sub':
+            result = int(x) - int(y)
+        elif op == 'mul':
+            result = int(x) * int(y)
+        elif op == 'div':
+            result = int(x) / int(y)
+        else:
+            result = 'op is wrong'
+
+        #local() 函数会以字典类型全部局部变量
+        return render(request, 'mycal.html', locals())
 
