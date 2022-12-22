@@ -5,16 +5,23 @@
 </head>
 <body>
 	
-<h1>int is {{ int }}</h1>          <!--  88 -->  
-<h1>str is {{ str }}</h1>          <!--  hello -->
+<h1>int is {{ int | add:"2"}}</h1>          <!--  88 + 2 -->  
+<h1>str is {{ str | upper }}</h1>          <!--  hello -> HELLO-->
 <h1>lst is {{ lst }}</h1>          <!--  ['a', 'b', 'c'] -->
 <h1>lst.0 is {{ lst.0 }}</h1>      <!--  a -->
 <h1>dict is {{ dict }}</h1>        <!--  {'a': 1, 'b': 2, 'c': 3} -->
 <h1>dict['a'] is {{ dict.a }}</h1> <!--  1 -->
 <h1>function is {{ func }}</h1>   <!--  hahaha -->
 <h1>class_obj is {{ class_obj.say }}</h1>  <!-- wangwangwang -->
-
+<h1>script is {{ script | safe }}</h1>  <!-- compiler script -->
 
 </body>
 
 </html>
+
+
+<!-- builtin  
+lower
+upper
+safe  
+add: "n" -->

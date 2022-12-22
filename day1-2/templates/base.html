@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	{% block mytitle %}
+	<title>zhu ye</title>
+	{% endblock %}
+</head>
+
+<body>
+
+<a href="/music_index">page music</a>
+<a href="/sport_index">page_sport</a>
+
+<br>
+
+	{% block info %}
+		this is block
+	{% endblock %}
+
+</br>
+
+{{ lst }}   <!-- not to child template(value form views)-->
+
+<h3>@@@@@@@@</h3>
+
+</body>
+
+</html>
+
+
+<!-- block in parent template (can change in child template )-->
+

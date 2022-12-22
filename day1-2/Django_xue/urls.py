@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('', views.index_view),
+
     path('page/1', views.page1),
 
     #converter 1-100 PAGE
@@ -51,6 +52,12 @@ urlpatterns = [
     path('test_if_for', views.test_if_for),
 
     path('mycal', views.test_mycal),
+
+    path('base_index', views.base_view),
+
+    path('music_index', views.music_view),
+
+    path('sport_index', views.sport_view)
 ]
 
 

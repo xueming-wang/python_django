@@ -94,6 +94,7 @@ def test_html_param(request):
     dic['dict'] = {'a': 1, 'b': 2, 'c': 3}
     dic['func'] = say_hi
     dic['class_obj'] = Dog()
+    dic['script'] = '<script>alert(1111)</script>'
 
     return render(request, 'test_html_param.html', dic)
 
@@ -139,3 +140,13 @@ def test_mycal(request):
         #local() 函数会以字典类型全部局部变量
         return render(request, 'mycal.html', locals())
 
+
+def base_view(request) :
+    lst = ['tom', 'jerry'] #to parent , no child
+    return render(request, 'base.html', locals())
+
+def music_view(request):
+    return render(request, 'music.html')
+
+def sport_view(request):
+    return render(request, 'sport.html')
