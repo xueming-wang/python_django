@@ -1,0 +1,17 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<!-- <img src="/static/img/image2.jpeg" width="200px" height="200px">
+<img src="../static/img/image2.jpeg" width="200px" height="200px">
+<img src="http://127.0.0.1:8000/static/img/image2.jpeg">  -->
+
+<!-- static method: 直接用二级文件名字-->
+{% load static %} 
+<img src="{% static 'img/image2.jpeg' %}" width="200px" height="200px">
+
+
+</body>
+</html>

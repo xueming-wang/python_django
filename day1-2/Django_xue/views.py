@@ -150,3 +150,18 @@ def music_view(request):
 
 def sport_view(request):
     return render(request, 'sport.html')
+
+def test_url(request):
+    return render(request, 'test_url.html')
+
+def test_url_result(request, age):
+    #302 重定向 进入base_index 
+    from django.urls import reverse
+    # reverse('alias', args=[], kwargs={})
+    url = reverse('base_index')  #base_index 是urls.py中的别名
+    return HttpResponseRedirect(url)
+
+
+
+
+

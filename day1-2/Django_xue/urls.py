@@ -53,11 +53,21 @@ urlpatterns = [
 
     path('mycal', views.test_mycal),
 
-    path('base_index', views.base_view),
+    path('base_index', views.base_view, name='base_index'),
 
     path('music_index', views.music_view),
 
-    path('sport_index', views.sport_view)
+    path('sport_index', views.sport_view),
+
+    # http://127.0.0.1:8000/test/url
+    path('test/url', views.test_url),
+
+    # url 反向解析
+    # path(rout, views, name='alias') 
+    # path('page', views.page_view, name='page_url'),
+    path('test_url_result/<int:age>', views.test_url_result, name='tr'),
+
+
 ]
 
 

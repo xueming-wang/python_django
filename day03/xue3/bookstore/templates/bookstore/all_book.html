@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>查看书籍</title>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<th>id</th>
+			<th>title</th>
+			<th>price</th>
+			<th>op</th>
+		</tr>
+		{% for b in all_book %}
+			<tr>
+				<td>{{ b.id }}</td>
+				<td>{{ b.title }}</td>
+				<td>{{ b.price }}</td>
+				<td>
+					<a href="">更新</a>
+					<a href="">删除</a>
+				</td>
+			</tr>
+		{% endfor %}
+	</table>
+</body>  
+ 
+</html>
