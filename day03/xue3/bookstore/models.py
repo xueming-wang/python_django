@@ -2,10 +2,14 @@ from django.db import models
 
 # Create your models here. 
 # max_length is must for CharField
+# title is in database(mysql)
+# ('name') is in admin
+
 class Book(models.Model):  
 	title = models.CharField('name', max_length=50, default='')
 	price = models.DecimalField('price', max_digits=7, decimal_places=2)
-	
+	is_active = models.BooleanField('is_active', default=True)
+
 	class Meta:
 		db_table = 'book'
 
@@ -25,6 +29,7 @@ class Author(models.Model):
 # 创建数据库 create database name;
 # drop database name;
 # show database;  desc table名字
+# select * from book\G;
 # exit 退出
 # 修改setting.py DATABASE
 
